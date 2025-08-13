@@ -82,7 +82,7 @@ Este é o hook mais importante e mais usado. Ele te dá acesso à função de tr
 
 <hr/>
 
-# Passos para criar e implementar o i18n em projeto React/Nnext
+# Passos para criar e implementar o i18n em projeto React/Next
 
 1. *Escolha uma biblioteca*: Selecione uma biblioteca de internacionalização, como i18next ou react-intl. A i18next é uma das mais populares e versáteis, com integrações robustas para React.
 2. *Instale as dependências:* Instale a biblioteca escolhida e seus plugins necessários. Para o i18next, isso inclui `i18next`, `react-i18next` e um carregador de arquivos (ex: `i18next-http-backend`).
