@@ -4,6 +4,7 @@
 ### Comandos instaladores:
 - `npx create-next-app@latest`
 - `npm install i18next react-i18next i18next-browser-languagedetector`
+- `npm install i18next-http-backend`
 
 ### Documentação base
 - (https://nextjs.org/docs/pages/guides/internationalization)
@@ -12,3 +13,4 @@
 ![Tradutor](/public/tradutor.png)
 
 <hr/>
+
