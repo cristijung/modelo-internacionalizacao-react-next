@@ -8,3 +8,7 @@
 ### Documentação base
 - (https://nextjs.org/docs/pages/guides/internationalization)
 - (https://nextjs.org/blog/next-15)
+
+![Tradutor](/tradutor.png)
+
+<hr/>
