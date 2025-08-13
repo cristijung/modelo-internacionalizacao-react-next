@@ -67,14 +67,29 @@ Quando o usuário seleciona um idioma, o aplicativo carrega o arquivo de traduç
 - *Otimização para Busca:* Conteúdos traduzidos podem ser indexados por motores de busca em diferentes países, melhorando o SEO internacional.
 
 <hr/>
+
+# O hook mais usado no i18n:
+
+## useTranslation
+Este é o hook mais importante e mais usado. Ele te dá acesso à função de tradução e à instância do i18n para manipular o idioma.
+- *Função t*: É a função principal que você usa para traduzir textos. Você passa a chave da tradução como argumento e ela retorna o texto correspondente no idioma atual.
+    - Exemplo: `const { t } = useTranslation(); e, no JSX, <h1>{t('welcome_message')}</h1>`.
+
+- *Instância i18n*: Acesso direto à instância da biblioteca, permitindo que você altere o idioma programaticamente.
+    - Exemplo: `const { i18n } = useTranslation(); e, para mudar o idioma, i18n.changeLanguage('en');`.
+
+- *Estado ready*: Uma flag que informa se as traduções foram carregadas com sucesso. Isso é útil para lidar com estados de carregamento, especialmente se você estiver usando lazy loading.
+
+<hr/>
+
 # Passos para criar e implementar o i18n em projeto React/Nnext
 
-1. Escolha uma biblioteca: Selecione uma biblioteca de internacionalização, como i18next ou react-intl. A i18next é uma das mais populares e versáteis, com integrações robustas para React.
-2. Instale as dependências: Instale a biblioteca escolhida e seus plugins necessários. Para o i18next, isso inclui `i18next`, `react-i18next` e um carregador de arquivos (ex: `i18next-http-backend`).
-3. Crie arquivos de tradução: Organize os textos em arquivos JSON, um para cada idioma (`en.json, pt-BR.json`), dentro de um diretório como public/locales.
-4. Configure a biblioteca: Crie um arquivo de configuração (`i18n.js` ou similar) para inicializar a biblioteca, especificando os idiomas suportados, o idioma padrão e o caminho para os arquivos de tradução.
-5. Integre com o Next.js: No Next.js, é importante configurar o i18n para funcionar com o roteamento. Isso pode ser feito no arquivo de configuração do Next.js (next.config.js), especificando os locales e o defaultLocale.
-6. Adicione o provedor no _app.js: Envolva seu componente App com o provedor da biblioteca (I18nextProvider ou similar) para que toda a aplicação tenha acesso às traduções.
-7. Use os hooks de tradução: Nos seus componentes, importe e use o hook de tradução (`useTranslation no react-i18next`) para acessar a função de tradução (`t`) e o idioma atual.
-8. Crie um seletor de idioma: Implemente um componente simples que permita ao usuário alternar entre os idiomas disponíveis, chamando a função i18n.`changeLanguage()` fornecida pela biblioteca.
-9. Adicione o suporte a SEO (opcional): Para o Next.js, use o Head e as tags link com hreflang para informar aos motores de busca sobre as versões de idioma da sua página.
+1. *Escolha uma biblioteca*: Selecione uma biblioteca de internacionalização, como i18next ou react-intl. A i18next é uma das mais populares e versáteis, com integrações robustas para React.
+2. *Instale as dependências:* Instale a biblioteca escolhida e seus plugins necessários. Para o i18next, isso inclui `i18next`, `react-i18next` e um carregador de arquivos (ex: `i18next-http-backend`).
+3. *Crie arquivos de tradução:* Organize os textos em arquivos JSON, um para cada idioma (`en.json, pt-BR.json`), dentro de um diretório como public/locales.
+4. *Configure a biblioteca:* Crie um arquivo de configuração (`i18n.js` ou similar) para inicializar a biblioteca, especificando os idiomas suportados, o idioma padrão e o caminho para os arquivos de tradução.
+5. *Integre com o Next.js:* No Next.js, é importante configurar o i18n para funcionar com o roteamento. Isso pode ser feito no arquivo de configuração do Next.js (next.config.js), especificando os locales e o defaultLocale.
+6. *Adicione o provedor no _app.js:* Envolva seu componente App com o provedor da biblioteca (I18nextProvider ou similar) para que toda a aplicação tenha acesso às traduções.
+7. *Use os hooks de tradução:* Nos seus componentes, importe e use o hook de tradução (`useTranslation no react-i18next`) para acessar a função de tradução (`t`) e o idioma atual.
+8. *Crie um seletor de idioma:* Implemente um componente simples que permita ao usuário alternar entre os idiomas disponíveis, chamando a função i18n.`changeLanguage()` fornecida pela biblioteca.
+9. *Adicione o suporte a SEO (opcional):* Para o Next.js, use o Head e as tags link com hreflang para informar aos motores de busca sobre as versões de idioma da sua página.
